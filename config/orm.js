@@ -15,6 +15,8 @@ function printQuestionMarks(num) {
   return arr.toString();
 }
 
+
+//************************************************************* */
 // Helper function to convert object key/value pairs to SQL syntax
 function objToSql(ob) {
   var arr = [];
@@ -37,6 +39,8 @@ function objToSql(ob) {
   return arr.toString();
 }
 
+//********************************************************************************* */
+
 // Object for all our SQL statement functions.
 var orm = {
   all: function(tableInput, cb) {
@@ -45,11 +49,14 @@ var orm = {
       if (err) {
         throw err;
       }
-      cb(result);
+      cb(result); // cb = callback
     });
   },
   create: function(table, cols, vals, cb) {
     var queryString = "INSERT INTO " + table;
+ 
+
+    //****************************************** */ use template literal 
 
     queryString += " (";
     queryString += cols.toString();
@@ -57,6 +64,7 @@ var orm = {
     queryString += "VALUES (";
     queryString += printQuestionMarks(vals.length);
     queryString += ") ";
+
 
     console.log(queryString);
 
