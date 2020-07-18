@@ -1,6 +1,8 @@
+// Some codes used from https://github.com/angrbrd/eat-da-burger
+
 var express = require("express");
 var bodyParser = require("body-parser");
-var methodOverride = require("method-override");
+// var methodOverride = require("method-override");
 
 var port = process.env.port || 3000;
 
